@@ -1,0 +1,23 @@
+frofrom pygame import *
+import sounddevice as sd
+import scipy.io.wavfile as wav
+
+# === Налаштування ===
+fs = 44100
+recording = None
+is_recording = False
+voice_file = "voice_record.wav"  # Записаний голос
+minus_track = "MinusDuHast.mp3"  # Мінусовка
+
+init()
+mixer.init()
+mixer.music.set_volume(0.5) # гучність мінусовки
+window_size = 1200, 600
+window = display.set_mode(window_size)
+clock = time.Clock()
+font.init()
+font_big = font.SysFont("Arial", 32)
+
+btn_rect = Rect(425, 250, 350, 80)
+rect_color = 'white'
+btn_text = "Запис"
